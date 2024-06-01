@@ -18,10 +18,12 @@ module.exports = function () {
     proyectoController.agregarPersona
   );
   router.put("/proyectos/:id", proyectoController.actualizarProyecto);
+
   router.get(
     "/proyectos/beneficiario/:id",
     proyectoController.obtenerProyectosPorBeneficiario
   );
+
   router.put("/eliminar/:id", proyectoController.eliminarProyecto); // Ruta actualizada para desactivar el proyecto
 
   // CRUD Personas ***************************************************************

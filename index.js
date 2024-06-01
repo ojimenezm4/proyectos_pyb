@@ -14,6 +14,8 @@ mongoose.connect(process.env.DB_URL, {
 
 // Crear el servidor
 const app = express();
+// Configurar carpeta pública para archivos subidos
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Habilitar bodyparser
 app.use(bodyParser.json());
@@ -41,9 +43,6 @@ app.use(cors(corsOptions));
 
 // Rutas de la app
 app.use("/", routes());
-
-// Configurar carpeta pública para archivos subidos
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 //esto se hace siempre para desplegar los proyectos en heroku
 const host = process.env.HOST || "0.0.0.0";
