@@ -20,8 +20,7 @@ mongoose
     console.error("Error conectando a MongoDB:", error.message);
     process.exit(1); // Salir si hay un error de conexión
   });
-console.log(process.env.DB_URL);
-console.log(process.env.FRONTEND_URL);
+
 // Crear el servidor
 const app = express();
 
@@ -42,8 +41,6 @@ const corsOptions = {
     }
   },
 };
-console.log(process.env.DB_URL);
-console.log(process.env.FRONTEND_URL);
 app.use(cors(corsOptions));
 
 // Rutas de la app
